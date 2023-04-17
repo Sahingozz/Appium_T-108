@@ -9,6 +9,10 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class DenemeTesti {
+    final String cihazAdi = "Galaxy A7 (2018)";
+    final String platformAdi = "Android";
+    final String platformVersion = "10.0";
+    final String automation = "UiAutomator2";
 
     AndroidDriver<MobileElement> driver;
 
@@ -16,10 +20,11 @@ public class DenemeTesti {
     public void deneme1() throws MalformedURLException {
 
         DesiredCapabilities capabilities=new DesiredCapabilities();
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Galaxy A7 (2018)");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0");
-        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,cihazAdi);
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,platformAdi);
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,platformVersion);
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,automation);
         capabilities.setCapability(MobileCapabilityType.APP,"C:\\Users\\Zafer\\IdeaProjects\\Appium_T-108\\Apps\\Calculator_8.4 (503542421)_Apkpure.apk");
 
         driver=new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
